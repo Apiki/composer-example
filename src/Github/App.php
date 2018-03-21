@@ -6,6 +6,8 @@
 namespace Composer\Example\Github;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * App Github
@@ -36,7 +38,6 @@ class App
         }
 
         $this->apiCall();
-
     }
 
     /**
@@ -46,11 +47,17 @@ class App
      */
     public function apiCall()
     {
-        $this->_response = self::$_client->request(
-            'GET',
-            'https://api.github.com/users/apiki/repos'
-        );
-
-        print_r($this->_response);
+        try {
+            $this->_response = self::$_client->request(
+                'GET',
+                'https://api.github.com/users/apiki/repos'
+            );
+            print_r(json_decode($this->_response->getBody()));
+        } catch(RequestException $e) {
+            echo Psr7\str($e->getRequest());
+            if ($e->hasResponse()) {
+                echo Psr7\str($e->getResponse());
+            }
+        }
     }
 }
