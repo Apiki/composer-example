@@ -1,0 +1,12 @@
+{
+    "name": "apiki/composer-example",
+    "description": "Exemplificando o uso do composer usando o PSR-4.",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Composer\\Example\\": "src/"
+        }
+    }
+}
