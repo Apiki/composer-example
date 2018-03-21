@@ -8,7 +8,7 @@ Exemplificando o uso do composer usando o PSR-4.
 composer install
 ```
 
-# Execução
+## Execução
 
 ```shell
 php index.php
