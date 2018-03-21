@@ -10,4 +10,6 @@ composer install
 
 # Execução
 
+```shell
 php index.php
+```
