@@ -1,0 +1,1 @@
+Compositor é um ferramento de gerenciamento de dependência em php que vem ganhado espaço mercado pois, com alguma linha pode ser configurar bibliotecas de terceiro em Padrão PSR-4 deixar um mão na roda no trabalho de orientação a objeto, ele simplemente carregar o arquivo da classe que é necessário.
